@@ -1,0 +1,130 @@
+.navbar{
+    background-color: rgb(41, 102, 233);
+    height: 180px;
+   /* width: 100%;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+   
+}
+
+.nav-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    max-width: 1500px;
+}
+
+.nav-logo{
+    align-items: center;
+    margin-left: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    flex-grow: 1;    
+}
+
+.nav-menu{
+
+  /*  display: flex;
+    list-style: none;
+    text-align: center;
+    position: fixed;*/
+
+  
+    position: fixed;
+    z-index: 99;
+    top: 24px;
+    padding: 2rem 1.25rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 5.875rem;
+    border-top: 8px solid #7ceb60;
+    border-bottom: 8px solid  #7ceb60;
+    list-style: none;
+    padding-left: 100px;
+    
+}
+
+.nav-links{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    list-style: none;
+    font-size: 1.5rem;
+    height: 100%;
+    border-bottom: 3px solid transparent;
+    padding: 0.5rem 0.5rem;
+}
+
+.nav-item{
+    line-height: 40px;
+    margin-right: 1rem;
+}
+
+.nav-item:after{
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: width 0.9s ease, background-color 0.5s ease;
+}
+
+.nav-item:hover:after{
+    width: 100%;
+    background:  rgb(186, 247, 128);
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+   
+}
+
+.nav-item .active{
+    color: rgb(186, 247, 128);
+}
+
+.nav-icon{
+    color: rgb(22, 21, 21);
+    display: none;
+}
+
+
+/*Media queri - menu movil*/
+
+@media screen and (max-width: 950px) {
+    
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-top: 1px solid #ffff;
+        position: absolute;
+        top: 180px;
+        left: -110%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        padding-left: 15px;
+    }
+
+    .nav-menu.active{
+        background-color: rgb(41, 102, 233);
+        left: 0px;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+    }
+
+    .nav-icon{
+        display: block;
+    }
+
+}
+
